@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -27,9 +28,9 @@ class HomeController extends Controller
         
         $tasks = DB::table('tasks')->get();
         
-        $incompleteTasks = DB::table('tasks')->where('completed', '=0')->get();
+        $incompleteTasks = DB::table('tasks')->where('completed', '=', 0)->where('user_id',Auth::user()->id)->get();
         
-        $completeTasks = DB::table('tasks')->where('completed', '=1')->get(); 
+        $completeTasks = DB::table('tasks')->where('completed', '=', 1)->where('user_id',Auth::user()->id)->get(); 
 
         return view('home', compact('tasks', 'incompleteTasks', 'completeTasks'));
 

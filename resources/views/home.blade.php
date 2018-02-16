@@ -18,12 +18,12 @@
  
                     <div class="panel-body ml auto">
                         <hr>
-                        <caption>Tarefas Completas</caption>
+                        <caption class="lead"><strong>Tarefas Completas</strong></caption>
                         <table class="table table-bordered table-striped">
                             <tbody>
                             <tr>
                                 <th>
-                                    Numero
+                                    ID Tarefa
                                 </th>
                                 <th>
                                     Nome
@@ -36,31 +36,34 @@
                                     Action
                                 </th>
                             </tr>
-                            <tr >
-                                <td>1</td>
+                            @foreach($completeTasks as $completeTask)        
+                            <tr>
                                 <td>
-                                    Tarefa
+                                    {{ $completeTask->id }}
                                 </td>
                                 <td>
-                                    foi muito boa
+                                    {{ $completeTask->name }}
                                 </td>
-                                    
+                                <td>
+                                    {{ $completeTask->description }}
+                                </td>
                                 <td>
                                     <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#update_task_model">Editar</button>
                                     <button class="btn btn-danger btn-xs">Apagar</button>
                                 </td>
                             </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     <br><br><br>
                     <hr>
-                    <caption><strong>Tarefas Incompletas</strong>></caption>
+                    <caption class="lead"><strong>Tarefas Incompletas</strong></caption>
 
                         <table class="table table-bordered table-striped">
                                     <tbody>
                                         <tr>
                                                 <th>
-                                                    Numero
+                                                    ID Tarefa
                                                 </th>
                                                 <th>
                                                     Nome
@@ -73,27 +76,32 @@
                                                     Action
                                                 </th>
                                             </tr>
+                                    @foreach($incompleteTasks as $incompleteTask)        
                                     <tr>
                                         <td>
-                                            
+                                            {{ $incompleteTask->id }}
                                         </td>
                                         <td>
-
+                                            {{ $incompleteTask->name }}
                                         </td>
                                         <td>
-
+                                            {{ $incompleteTask->description }}
                                         </td>
                                         <td>
                                             <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#update_task_model">Editar</button>
                                             <button class="btn btn-danger btn-xs">Apagar</button>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     </tbody>
                             </table>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
  
         <div class="modal fade" tabindex="-1" role="dialog" id="add_task_model">
             <div class="modal-dialog" role="document">
