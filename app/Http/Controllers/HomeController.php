@@ -24,5 +24,9 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+
+        $completeTasks = DB::table('tasks')->where('completed = 1')->get();
+
+        $incompleteTasks = DB::table('tasks')->where('completed = 0')->get();
     }
 }
