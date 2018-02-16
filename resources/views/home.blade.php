@@ -17,6 +17,8 @@
                     <hr>
  
                     <div class="panel-body ml auto">
+                        <hr>
+                        <caption>Tarefas Completas</caption>
                         <table class="table table-bordered table-striped">
                             <tbody>
                             <tr>
@@ -50,6 +52,44 @@
                             </tr>
                             </tbody>
                         </table>
+                    <br><br><br>
+                    <hr>
+                    <caption><strong>Tarefas Incompletas</strong>></caption>
+
+                        <table class="table table-bordered table-striped">
+                                    <tbody>
+                                        <tr>
+                                                <th>
+                                                    Numero
+                                                </th>
+                                                <th>
+                                                    Nome
+                                                </th>
+                                                <th>
+                                                    Descrição
+                                                </th>
+                
+                                                <th>
+                                                    Action
+                                                </th>
+                                            </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#update_task_model">Editar</button>
+                                            <button class="btn btn-danger btn-xs">Apagar</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                            </table>
                     </div>
                 </div>
             </div>
@@ -100,8 +140,7 @@
  
                         <div class="form-group">
                             <label>Nome:</label>
-                            <input type="text" placeholder="nome da tarefa" class="form-control"
->
+                            <input type="text" placeholder="nome da tarefa" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="description">Descrição:</label>
